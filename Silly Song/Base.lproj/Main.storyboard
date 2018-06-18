@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Silly_Song" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Silly Song" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2MJ-Wl-ZRe">
+                                <rect key="frame" x="79" y="20" width="216" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="QMF-TP-tca"/>
+                                    <constraint firstAttribute="width" constant="216" id="WUd-AD-qWq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="36"/>
+                                <color key="textColor" red="0.1021701917052269" green="0.090014107525348663" blue="0.6212615966796875" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p2U-P9-hfH">
+                                <rect key="frame" x="0.0" y="95" width="375" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0uT-Xu-aje"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="QFx-DE-bhK"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="displayLyrics:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="fjy-WV-503"/>
+                                    <action selector="reset:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="e45-kM-Idk"/>
+                                </connections>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="n2v-vf-L0f">
+                                <rect key="frame" x="67" y="153" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Odg-Qf-igf"/>
+                                    <constraint firstAttribute="height" constant="128" id="ZhN-dc-thg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.48662845568520341" green="0.85724441118803707" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="n2v-vf-L0f" firstAttribute="centerX" secondItem="p2U-P9-hfH" secondAttribute="centerX" id="0OX-a0-Y1H"/>
+                            <constraint firstItem="p2U-P9-hfH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="4wY-dJ-qvW"/>
+                            <constraint firstItem="2MJ-Wl-ZRe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="FWC-KI-6qT"/>
+                            <constraint firstItem="2MJ-Wl-ZRe" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Lo5-YI-ZXU"/>
+                            <constraint firstItem="n2v-vf-L0f" firstAttribute="top" secondItem="p2U-P9-hfH" secondAttribute="bottom" constant="28" id="Stl-cI-Zht"/>
+                            <constraint firstItem="2MJ-Wl-ZRe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="79" id="WWb-VC-rhP"/>
+                            <constraint firstItem="p2U-P9-hfH" firstAttribute="top" secondItem="2MJ-Wl-ZRe" secondAttribute="bottom" constant="8" id="Wyk-xa-f0o"/>
+                            <constraint firstItem="p2U-P9-hfH" firstAttribute="centerX" secondItem="2MJ-Wl-ZRe" secondAttribute="centerX" id="xMa-Sr-d94"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="lyricsView" destination="n2v-vf-L0f" id="y2G-K0-OBN"/>
+                        <outlet property="nameField" destination="p2U-P9-hfH" id="b3P-ak-srE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
